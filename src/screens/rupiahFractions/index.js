@@ -27,13 +27,13 @@ class RupiahFractions extends Component {
     const { errors, results } = this.state;
     return (
       <div className="Container">
-        <RupiahInput errors={errors} handleEnter={this.doValidation} />
-        <div>
-          <Button variant="contained" onClick={this.doValidation}>
+        <div className="Input">
+          <RupiahInput errors={errors} handleEnter={this.doValidation} />
+          <Button variant="contained" onClick={this.doValidation} style={{marginBottom: 20}}>
             Process
           </Button>
-          <Results results={results} />
         </div>
+        <Results results={results} />
       </div>
     );
   }
