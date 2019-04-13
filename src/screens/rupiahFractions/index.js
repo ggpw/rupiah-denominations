@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Button from "@material-ui/core/Button";
 import RupiahInput from "components/rupiahInput";
+import Results from "components/denominationResults";
 import { validation, denominate } from "utils/functions/checkInputRupiah";
 import "./index.css";
 
@@ -31,7 +32,7 @@ class RupiahFractions extends Component {
           <Button variant="contained" onClick={this.doValidation}>
             Process
           </Button>
-          {results.map((r,idx) => <p key={idx}>{r}</p>)}
+          <Results results={results} />
         </div>
       </div>
     );

@@ -21,19 +21,30 @@ export function denominate(value) {
   let nominal = value.replace(/[^\d,-]/g, "");
   nominal = nominal.replace(/,/g, "");
   nominal = parseInt(nominal);
-  let denominations = [];
+  let denominationResults = [];
   for (let index = 0; index < RUPIAH_FRACTION.length; index++) {
     const rupiah = RUPIAH_FRACTION[index];
-    if (rupiah > nominal) continue; //skip to next fraction
-    else if (nominal===0)break; //stop check fraction
-    else{//do denomination
-      const n = parseInt(nominal/rupiah);
-      nominal = nominal%rupiah;
-      denominations.push(rupiah+" x "+n);
+    if (rupiah > nominal) continue;
+    //skip to next fraction
+    else if (nominal === 0) break;
+    //stop check fraction
+    else {
+      //do denomination
+      const n = parseInt(nominal / rupiah);
+      nominal = nominal % rupiah;
+      denominationResults.push({
+        isLeft: false,
+        nominal: rupiah,
+        count: n
+      });
     }
   }
-  if(nominal){
-    denominations.push("Cant be devided "+nominal);
+  if (nominal) {
+    denominationResults.push({
+      isLeft: true,
+      nominal: nominal,
+      count: 0
+    });
   }
-  return denominations;
+  return denominationResults;
 }
