@@ -11,13 +11,9 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import styles from "./styles.js";
 
 class RupiahInput extends Component {
-  state = {
-    value: ""
-  };
 
   handleChange = event => {
     const value = event.target.value;
-    this.setState({ value: value });
     this.props.dispatch(setValue(value));
   };
 
@@ -48,7 +44,7 @@ class RupiahInput extends Component {
             </InputLabel>
             <OutlinedInput
               id="component-outlined"
-              value={this.state.value}
+              value={this.props.value}
               onChange={this.handleChange}
               onKeyPress={this.handleKeyPress}
               labelWidth={this.labelRef ? this.labelRef.offsetWidth : 0}
@@ -65,4 +61,10 @@ class RupiahInput extends Component {
 RupiahInput.propTypes = {
   classes: PropTypes.object.isRequired
 };
-export default connect()(withStyles(styles)(RupiahInput));
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    value: state.rupiah
+  };
+};
+export default connect(mapStateToProps)(withStyles(styles)(RupiahInput));
