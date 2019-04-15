@@ -1,68 +1,41 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple javascript app that will split Rupiah Nominal into minimal fraction
 
-## Available Scripts
+## How to run
+First you need to install [`Node.js`](https://nodejs.org/en/download/) and [`npm`](https://www.npmjs.com/get-npm)
 
-In the project directory, you can run:
+### `npm install`
+Install the dependencies with command `npm install` inside your terminal/command-prompt
 
 ### `npm start`
-
-Runs the app in the development mode.<br>
+Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
+The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Notes
 
-### `npm run build`
+### Tech
+Aside from `React.js` this simple app use [`material-ui`](https://material-ui.com/) and [`redux`](https://redux.js.org/)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Code Explanation
+The codes that run the application are inside `src` folder.
+The route first will be `index.js` that will call `App.js` inside `src\screens` folder.
+The `App.js` will route to `rupiahFractions` screen.
+Inside `rupiahFractions` screen consist of components: `rupiahInput` that will receive user input and store it into `redux-store`, `Button` `material-ui` that will process the value inputed by user and stored; and `denominationResults` that will display the result of the process.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Project Structure
+Asside from `index.js` and `index.css` the structure inside `src` folder are;
+- `components`
+- `constant`
+- `images`
+- `screens`
+- `utils`
 
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
